@@ -10,12 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     game.cpp \
+    gameengine.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp
 
 HEADERS += \
     game.h \
+    gameengine.h \
     mainwindow.h \
     player.h
 
