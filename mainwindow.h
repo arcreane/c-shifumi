@@ -8,6 +8,7 @@ namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 #include "opencv2/opencv.hpp"
 #include <opencv2/highgui.hpp>
+#include <QPixmap>
 
 class MainWindow : public QMainWindow
 {

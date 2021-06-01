@@ -14,14 +14,17 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="webcam">
+   <widget class="QLabel" name="webcam">
     <property name="geometry">
      <rect>
-      <x>5</x>
-      <y>-19</y>
-      <width>791</width>
-      <height>571</height>
+      <x>110</x>
+      <y>100</y>
+      <width>571</width>
+      <height>351</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>

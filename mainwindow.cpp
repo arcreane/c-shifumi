@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "QPixmap"
 
 
 
@@ -17,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     for(;;){
         capture>>frame;
         cv::imshow("MainWindow", frame);
+        //ui->webcam->setPixmap(QPixmap::fromImage(frame));
+        //ui->webcam->setPixmap(QPixmap::fromImage(frame));
         if( frame.empty() ) break; // end of video stream
         if( cv::waitKey(10) == 27 ) break; // stop capturing by pressing ESC
     }
