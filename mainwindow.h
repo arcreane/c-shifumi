@@ -6,6 +6,8 @@
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+#include "opencv2/opencv.hpp"
+#include <opencv2/highgui.hpp>
 
 class MainWindow : public QMainWindow
 {
@@ -14,6 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    cv::VideoCapture capture;
 
 private:
     Ui::MainWindow *ui;
