@@ -12,8 +12,19 @@ void Game::initGame(QString pseudo, int round){
     return;
 }
 
-void Game::playGame(){
-    return;
+QString Game::playGame(QString choice){
+    if(choice == "rock"){
+        return "égalité";
+    }
+    else if(choice == "paper"){
+        return "victoire";
+    }
+    else if(choice == "scissors"){
+        return "défaite";
+    }
+    else {
+        return "y'a un problème !";
+    }
 }
 
 void Game::endGame(){

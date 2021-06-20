@@ -15,7 +15,7 @@ public:
     float time;
 
     void initGame(QString pseudo, int round);
-    void playGame();
+    QString playGame(QString choice);
     void endGame();
     void saveGame();
 

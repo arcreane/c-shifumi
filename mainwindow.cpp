@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->resultWidget->hide();
     ui->gameWidget->hide();
 
 //    cv::VideoCapture capture;
@@ -47,16 +48,22 @@ void MainWindow::startGame()
 
 void MainWindow::rock()
 {
-
+    ui->resultLabel->setText(game.playGame("rock"));
+    ui->gameWidget->hide();
+    ui->resultWidget->show();
 }
 
 void MainWindow::paper()
 {
-
+    ui->resultLabel->setText(game.playGame("paper"));
+    ui->gameWidget->hide();
+    ui->resultWidget->show();
 }
 
 void MainWindow::scissors()
 {
-
+    ui->resultLabel->setText(game.playGame("scissors"));
+    ui->gameWidget->hide();
+    ui->resultWidget->show();
 }
 
