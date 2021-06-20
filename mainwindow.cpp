@@ -4,6 +4,7 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/core.hpp>
 #include <opencv2/imgcodecs.hpp>
+#include <iostream>
 
 
 
@@ -48,21 +49,28 @@ void MainWindow::startGame()
 
 void MainWindow::rock()
 {
-    ui->resultLabel->setText(game.playGame("rock"));
+    QString *result[2] = game.playGame("rock");
+    ui->resultLabel->setText(result[0]);
+    ui->iaChoice->setText(result[1]);
     ui->gameWidget->hide();
     ui->resultWidget->show();
 }
 
 void MainWindow::paper()
 {
-    ui->resultLabel->setText(game.playGame("paper"));
+    QString result[2] = game.playGame("paper");
+    ui->resultLabel->setText(result[0]);
+    ui->iaChoice->setText(result[1]);
     ui->gameWidget->hide();
     ui->resultWidget->show();
 }
 
 void MainWindow::scissors()
 {
-    ui->resultLabel->setText(game.playGame("scissors"));
+    QString result[2];
+    result = std::copy(game.playGame("scissors"));
+    ui->resultLabel->setText(result[0]);
+    ui->iaChoice->setText(result[1]);
     ui->gameWidget->hide();
     ui->resultWidget->show();
 }
