@@ -14,7 +14,7 @@ public:
     int maxRound;
     float time;
 
-    void initGame();
+    void initGame(QString pseudo, int round);
     void playGame();
     void endGame();
     void saveGame();

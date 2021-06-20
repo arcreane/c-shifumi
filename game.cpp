@@ -5,7 +5,10 @@ Game::Game()
 
 }
 
-void Game::initGame(){
+void Game::initGame(QString pseudo, int round){
+
+    this->playerOne.name = pseudo;
+
     return;
 }
 

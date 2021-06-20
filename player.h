@@ -1,13 +1,14 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <iostream>
+#include <QString>
+
 
 class Player
 {
 public:
     Player();
-    std::string name;
+    QString name;
     int matchPlayed;
     int nbWins;
     int nbLoses;

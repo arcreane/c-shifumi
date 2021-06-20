@@ -3,10 +3,6 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 
-QT_CONFIG -= no-pkg-config
-CONFIG  += link_pkgconfig
-PKGCONFIG += opencv4
-
 CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -29,12 +25,16 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+
+
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-macx {
-    INCLUDEPATH += "/usr/local/Cellar/opencv/4.5.2_4/include/opencv4"
-    LIBS += -L"/usr/local/Cellar/opencv/4.5.2_4/lib"
+debug {
+    LIBS += -LC:\Users\thoma\OneDrive\Documents\dev\c++\opencv\build\x64\vc15\lib -lopencv_world452d
+    INCLUDEPATH += C:\Users\thoma\OneDrive\Documents\dev\c++\opencv\build\include
 }
+
+
