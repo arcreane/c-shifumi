@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->resultWidget->hide();
     ui->gameWidget->hide();
+    ui->endWidget->hide();
 
 //    cv::VideoCapture capture;
 
@@ -47,7 +48,10 @@ void MainWindow::startGame()
     int nombre = roundMax.toInt(&ok, 10);
     game.initGame(value, nombre);
     ui->welcomeWidget->hide();
+    ui->endWidget->hide();
     ui->gameWidget->show();
+    this->game.playerOne.nbLoses = 0;
+    this->game.playerOne.nbWins = 0;
 }
 
 void MainWindow::rock()
@@ -75,9 +79,13 @@ void MainWindow::chooseSign(int sign){
     QTimer::singleShot(2000 , [=]() {
         if(this->game.maxRound == this->game.playerOne.nbWins){
             ui->resultWidget->hide();
+            ui->endWidget->show();
+            ui->endMessage->setText("Vous avez gagné");
         }
         else if(this->game.maxRound == this->game.playerOne.nbLoses){
              ui->resultWidget->hide();
+             ui->endWidget->show();
+             ui->endMessage->setText("Vous avez perdu");
         }
         else{
             ui->gameWidget->show();

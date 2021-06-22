@@ -196,6 +196,45 @@
      </property>
     </widget>
    </widget>
+   <widget class="QWidget" name="endWidget" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>761</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="endMessage">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>240</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Entrer les round max gagnant</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="restartButton">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>270</y>
+       <width>161</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Rejouer !</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -272,6 +311,22 @@
     <hint type="destinationlabel">
      <x>627</x>
      <y>634</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>restartButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>startGame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>374</x>
+     <y>311</y>
     </hint>
    </hints>
   </connection>
