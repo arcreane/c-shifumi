@@ -49,26 +49,22 @@ void MainWindow::startGame()
 
 void MainWindow::rock()
 {
-    QString *result[2] = game.playGame("rock");
-    ui->resultLabel->setText(result[0]);
-    ui->iaChoice->setText(result[1]);
-    ui->gameWidget->hide();
-    ui->resultWidget->show();
+    this->chooseSign(0);
 }
 
 void MainWindow::paper()
 {
-    QString result[2] = game.playGame("paper");
-    ui->resultLabel->setText(result[0]);
-    ui->iaChoice->setText(result[1]);
-    ui->gameWidget->hide();
-    ui->resultWidget->show();
+    this->chooseSign(1);
 }
 
 void MainWindow::scissors()
 {
+    this->chooseSign(2);
+}
+
+void MainWindow::chooseSign(int sign){
     QString result[2];
-    result = std::copy(game.playGame("scissors"));
+    result = std::copy(game.playGame(sign));
     ui->resultLabel->setText(result[0]);
     ui->iaChoice->setText(result[1]);
     ui->gameWidget->hide();

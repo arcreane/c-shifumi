@@ -22,6 +22,7 @@ public slots:
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void chooseSign(int sign);
     Game game;
 
 private:

@@ -12,21 +12,9 @@ void Game::initGame(QString pseudo, int round){
     return;
 }
 
-QString * Game::playGame(QString choice){
+QString * Game::playGame(int userChoice){
 
-    int userChoice;
     static QString result[2];
-
-    if(choice == "rock"){
-         userChoice = 0;
-    }
-    else if(choice == "paper"){
-        userChoice = 1;
-    }
-    else {
-        userChoice = 2;
-    }
-
 
     int iaChoice = rand() % 3;
     int rules[3][2] = {{2, 1}, {0,2}, {1, 0}};
