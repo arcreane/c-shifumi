@@ -5,8 +5,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/imgcodecs.hpp>
 #include <iostream>
-
-
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -67,11 +66,24 @@ void MainWindow::scissors()
 }
 
 void MainWindow::chooseSign(int sign){
-    QString result[2];
-    result = std::copy(game.playGame(sign));
-    ui->resultLabel->setText(result[0]);
-    ui->iaChoice->setText(result[1]);
+    std::vector<std::string> result (2);
+    result = game.playGame(sign);
+    ui->resultLabel->setText(QString(result[0].c_str()));
+    ui->iaChoice->setText(QString(result[1].c_str()));
     ui->gameWidget->hide();
     ui->resultWidget->show();
+    QTimer::singleShot(2000 , [=]() {
+        if(this->game.maxRound == this->game.playerOne.nbWins){
+            ui->resultWidget->hide();
+        }
+        else if(this->game.maxRound == this->game.playerOne.nbLoses){
+             ui->resultWidget->hide();
+        }
+        else{
+            ui->gameWidget->show();
+            ui->resultWidget->hide();
+        }
+    });
+
 }
 

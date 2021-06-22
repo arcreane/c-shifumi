@@ -15,7 +15,7 @@ public:
     float time;
 
     void initGame(QString pseudo, int round);
-    QString * playGame(int choice);
+    std::vector<std::string> playGame(int choice);
     void endGame();
     void saveGame();
 
