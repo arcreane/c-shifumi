@@ -13,97 +13,101 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QWidget" name="welcomeWidget" native="true">
     <property name="enabled">
      <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>-10</x>
-      <y>0</y>
-      <width>761</width>
-      <height>601</height>
+      <x>170</x>
+      <y>160</y>
+      <width>371</width>
+      <height>211</height>
      </rect>
     </property>
-    <widget class="QLabel" name="pseudoLabel">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>290</y>
-       <width>161</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Entrez votre pseudo</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>50</y>
-       <width>301</width>
-       <height>101</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Commencez a jouer au Shifumi !</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="playButton">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>350</y>
-       <width>161</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Jouer !</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="pseudoInput">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>310</y>
-       <width>161</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Pseudo</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="roundInput">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>150</y>
-       <width>161</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Round Max</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="roundLabel">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>130</y>
-       <width>161</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Entrer les round max gagnant</string>
-     </property>
-    </widget>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0" rowspan="2" colspan="2">
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">font-size:16px;margin:0 auto</string>
+       </property>
+       <property name="text">
+        <string>     Commencez à jouer au Shifumi !</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="roundLabel">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size:12px; margin:0 auto;</string>
+       </property>
+       <property name="text">
+        <string>      Entrez le nombre de manches gagnantes</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="roundInput">
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLabel" name="pseudoLabel">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size:12px;margin:0 auto; </string>
+       </property>
+       <property name="text">
+        <string>                         Entrez votre pseudo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="pseudoInput">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QPushButton" name="playButton">
+       <property name="styleSheet">
+        <string notr="true"> background-color: #e7e7e7; /* Green */
+  border: none;
+  color: dark;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+ border-radius: 32px</string>
+       </property>
+       <property name="text">
+        <string>Jouer !</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QWidget" name="gameWidget" native="true">
     <property name="enabled">
@@ -117,6 +121,9 @@
       <height>601</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <widget class="QPushButton" name="rockButton">
      <property name="geometry">
       <rect>
@@ -125,6 +132,17 @@
        <width>171</width>
        <height>81</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> background-color: #BC8F8F; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+ border-radius: 32px</string>
      </property>
      <property name="text">
       <string>Pierre</string>
@@ -139,6 +157,17 @@
        <height>81</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"> background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+ border-radius: 32px</string>
+     </property>
      <property name="text">
       <string>Feuille</string>
      </property>
@@ -152,47 +181,19 @@
        <height>81</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"> background-color: #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+ border-radius: 32px</string>
+     </property>
      <property name="text">
       <string>Ciseaux</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="resultWidget" native="true">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>761</width>
-      <height>601</height>
-     </rect>
-    </property>
-    <widget class="QLabel" name="resultLabel">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>300</y>
-       <width>291</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="iaChoice">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>260</y>
-       <width>291</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
      </property>
     </widget>
    </widget>
@@ -207,6 +208,9 @@
       <width>761</width>
       <height>601</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <widget class="QLabel" name="endMessage">
      <property name="geometry">
@@ -230,11 +234,90 @@
        <height>25</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"> background-color: #e7e7e7; /* Green */
+  border: none;
+  color: dark;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+ border-radius: 32px</string>
+     </property>
      <property name="text">
       <string>Rejouer !</string>
      </property>
     </widget>
    </widget>
+   <widget class="QWidget" name="resultWidget" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>761</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <widget class="QLabel" name="resultLabel">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>291</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> background-color: #fff; /* Green */
+  border: none;
+  color: dark;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+ border-radius: 32p;x</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="iaChoice">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>220</y>
+       <width>141</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"> background-color: #fff; /* Green */
+  border: none;
+  color: dark;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+ border-radius: 32p;x</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>gameWidget</zorder>
+   <zorder>endWidget</zorder>
+   <zorder>welcomeWidget</zorder>
+   <zorder>resultWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

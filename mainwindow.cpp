@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    qApp->setStyleSheet("QWidget#centralwidget { background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(238, 174, 202, 100), stop:1 rgba(148, 187, 233, 100));}");
     ui->resultWidget->hide();
     ui->gameWidget->hide();
     ui->endWidget->hide();
@@ -70,10 +71,11 @@ void MainWindow::scissors()
 }
 
 void MainWindow::chooseSign(int sign){
+    std::string signs[3] = { "Pierre", "Feuille", "Ciseaux" };
     std::vector<std::string> result (2);
     result = game.playGame(sign);
     ui->resultLabel->setText(QString(result[0].c_str()));
-    ui->iaChoice->setText(QString(result[1].c_str()));
+    ui->iaChoice->setText(QString(signs[std::stoi(result[1])].c_str()));
     ui->gameWidget->hide();
     ui->resultWidget->show();
     QTimer::singleShot(2000 , [=]() {
