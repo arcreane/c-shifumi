@@ -41,8 +41,12 @@ MainWindow::~MainWindow()
 void MainWindow::startGame()
 {
     QString value;
+    QString roundMax;
     value = ui->pseudoInput->text();
-    game.initGame(value, 1);
+    roundMax = ui->roundInput->text();
+    bool ok = false;
+    int nombre = roundMax.toInt(&ok, 10);
+    game.initGame(value, nombre);
     ui->welcomeWidget->hide();
     ui->gameWidget->show();
 }

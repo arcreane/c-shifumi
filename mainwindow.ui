@@ -78,6 +78,32 @@
       <string>Pseudo</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="roundInput">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>150</y>
+       <width>161</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Round Max</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="roundLabel">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>130</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Entrer les round max gagnant</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="gameWidget" native="true">
     <property name="enabled">
@@ -177,7 +203,7 @@
      <x>0</x>
      <y>0</y>
      <width>749</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
